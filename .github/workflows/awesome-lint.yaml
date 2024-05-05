@@ -1,0 +1,15 @@
+name: Awesome Lint
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+    
+jobs:
+  awesome-lint-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - run: npx awesome-lint https://github.com/DD5HT/awesome-hamradio
